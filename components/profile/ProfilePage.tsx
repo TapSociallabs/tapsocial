@@ -65,7 +65,7 @@ export default function ProfilePage({ username }: { username: string }) {
 
         <h1 className="text-3xl font-bold">{data.full_name}</h1>
         <p className="opacity-80">{data.title}</p>
-        <Debug />
+        
 
         <div className="flex justify-center gap-6 mt-4 opacity-80">
           <span>{data.stats.connections} Connections</span>
