@@ -24,7 +24,10 @@ export default function ConnectModal({
     };
   }, [onClose]);
 
-  const deepLink = (url?: string) => url && (window.location.href = url);
+  const deepLink = (url?: string) => { if (url) window.location.href = url; };
+
+  const ytUrl = (handle?: string) =>
+    handle ? `https://youtube.com/${handle.startsWith('@') ? handle : '@' + handle}` : undefined;
 
   const downloadVCF = () => {
     const vcf = `BEGIN:VCARD
@@ -34,13 +37,16 @@ END:VCARD`;
     const blob = new Blob([vcf], { type: 'text/vcard' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url; a.download = `${fullName.replace(/\s+/g,'-')}.vcf`; a.click();
+    a.href = url; a.download = `${fullName.replace(/\s+/g, '-')}.vcf`; a.click();
   };
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
-      <motion.div initial={{ scale: .9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
-        className="w-80 rounded-2xl p-8 border border-[#A832FF40] shadow-2xl bg-white text-black dark:bg-dark dark:text-white">
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        className="w-80 rounded-2xl p-8 border border-[#A832FF40] shadow-2xl bg-white text-black dark:bg-dark dark:text-white"
+      >
         <h2 className="text-2xl font-bold mb-6 text-center">Let’s Connect</h2>
         <div className="grid gap-3">
           {socials.tiktok && (
@@ -62,7 +68,7 @@ END:VCARD`;
           )}
           {socials.youtube && (
             <button
-              onClick={() => deepLink(`https://youtube.com/${socials.youtube.startsWith('@') ? socials.youtube : '@'+socials.youtube}`)}
+              onClick={() => deepLink(ytUrl(socials.youtube))}
               className="py-3 rounded-lg font-semibold text-white bg-red-600 hover:opacity-90"
             >
               Subscribe on YouTube
@@ -83,9 +89,10 @@ END:VCARD`;
             Add Contact
           </button>
         </div>
-        <button onClick={onClose} className="mt-6 block mx-auto text-sm opacity-70 hover:opacity-100">Cancel</button>
+        <button onClick={onClose} className="mt-6 block mx-auto text-sm opacity-70 hover:opacity-100">
+          Cancel
+        </button>
       </motion.div>
     </div>
   );
 }
-
