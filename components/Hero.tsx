@@ -1,4 +1,4 @@
-'use client';
+import Link from "next/link";
 import CTAButton from './buttons/CTAButton';
 
 export default function Hero() {
@@ -11,7 +11,7 @@ export default function Hero() {
         Turn followers into real connections with a profile made to convert.
       </p>
 
-      <CTAButton text="Claim Your Profile" />
+      <Link href="/claim"><CTAButton text="Claim Your Profile" /></Link>
 
       <p className="text-sm opacity-60 mt-6">
         Already have a TapSocial? Try your name: <span className="font-semibold">/zay</span> or <span className="font-semibold">/mia</span>
