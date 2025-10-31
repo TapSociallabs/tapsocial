@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'TapSocial — Your identity. One tap away.',
   description: 'Turn followers into real connections with TapSocial.',
+  metadataBase: new URL('https://www.tapsocial.me'),
   openGraph: {
     title: 'TapSocial — One Tap. All You.',
     description: 'Turn followers into real connections.',

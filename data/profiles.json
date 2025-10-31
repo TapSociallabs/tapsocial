@@ -1,0 +1,54 @@
+{
+  "auroracodes": {
+    "full_name": "Aurora Kim",
+    "title": "AI Creator & Product Designer",
+    "avatar": "/avatar-demo.png",
+    "stats": { "connections": "112K", "views": "1.2M" },
+    "socials": {
+      "tiktok": "auroracodes",
+      "instagram": "auroracodes",
+      "youtube": "@auroracodes",
+      "website": "https://aurora.design"
+    },
+    "featured": [
+      { "title": "Build AI apps fast", "poster": "/featured/ai-editing.jpg", "link": "https://youtube.com/@auroracodes" },
+      { "title": "Prompt hacks", "poster": "/featured/prompt-hack.jpg", "link": "https://tiktok.com/@auroracodes" },
+      { "title": "Design smarter", "poster": "/featured/ui-design.jpg", "link": "https://instagram.com/auroracodes" }
+    ]
+  },
+  "zay": {
+    "full_name": "Zay Nova",
+    "title": "Music Producer",
+    "avatar": "/avatar-demo.png",
+    "stats": { "connections": "58K", "views": "640K" },
+    "socials": {
+      "tiktok": "zaynovabeats",
+      "instagram": "zay.nova",
+      "youtube": "@zaynova",
+      "website": "https://zaynova.io"
+    },
+    "featured": [
+      { "title": "808 kit drop", "poster": "/featured/demo-zay-1.jpg", "link": "https://zaynova.io" },
+      { "title": "Cookup session", "poster": "/featured/demo-zay-2.jpg", "link": "https://instagram.com/zay.nova" },
+      { "title": "Preset pack", "poster": "/featured/demo-zay-3.jpg", "link": "https://tiktok.com/@zaynovabeats" }
+    ]
+  },
+  "mia": {
+    "full_name": "Mia Brooks",
+    "title": "Digital Entrepreneur",
+    "avatar": "/avatar-demo.png",
+    "stats": { "connections": "89K", "views": "940K" },
+    "socials": {
+      "tiktok": "miabrookshq",
+      "instagram": "miabrooks.co",
+      "youtube": "@miabrooks",
+      "website": "https://miabrooks.co"
+    },
+    "featured": [
+      { "title": "Shop launch", "poster": "/featured/demo-mia-1.jpg", "link": "https://miabrooks.co" },
+      { "title": "Funnels 101", "poster": "/featured/demo-mia-2.jpg", "link": "https://instagram.com/miabrooks.co" },
+      { "title": "Daily systems", "poster": "/featured/demo-mia-3.jpg", "link": "https://tiktok.com/@miabrookshq" }
+    ]
+  }
+}
+
