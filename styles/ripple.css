@@ -1,0 +1,19 @@
+.ripple { position: relative; }
+.ripple::after {
+  content: "";
+  position: absolute;
+  width: 200%; height: 200%;
+  top: -50%; left: -50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 50, 255, 0.20) 0%,
+    rgba(77, 0, 255, 0.10) 30%,
+    rgba(0,0,0,0) 70%
+  );
+  animation: rippleAnimation 5s infinite ease-out;
+}
+@keyframes rippleAnimation {
+  0% { transform: scale(0.6); opacity: .9; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
