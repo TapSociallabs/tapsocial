@@ -53,11 +53,16 @@ export default function ProfilePage({
         </motion.button>
 
         <FeaturedContent items={data.featured} />
-        <SocialLinks socials={data.socials} username={username} />
+        <SocialLinks socials={data.socials as Record<string, string>} username={username} />
       </div>
 
       {showModal && (
-        <ConnectModal onClose={() => setShowModal(false)} socials={data.socials} fullName={data.full_name} />
+        <ConnectModal
+          onClose={() => setShowModal(false)}
+          socials={data.socials}
+          fullName={data.full_name}
+          username={username}
+        />
       )}
     </div>
   );
