@@ -1,11 +1,12 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import profiles from "@/data/profiles.json";
 
 export async function GET(
-  _req: Request,
-  { params }: { params: { username: string; platform: string } }
+  _req: NextRequest,
+  { params }: { params: Promise<{ username: string; platform: string }> }
 ) {
-  const { username, platform } = params;
+  const { username, platform } = await params;
+
   const key = username.toLowerCase();
   const profile = (profiles as Record<string, any>)[key];
 
