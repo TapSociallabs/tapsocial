@@ -28,8 +28,7 @@ export default function AuthCallbackPage() {
       }
       router.replace("/dashboard");
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [router, sp]);
 
   return null;
 }

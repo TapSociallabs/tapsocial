@@ -84,6 +84,13 @@ export default function LoginClient() {
             NEXT_PUBLIC_SUPABASE_ANON_KEY in Vercel.
           </p>
         )}
+        <p className="mt-3 text-xs">
+          Having trouble with the magic link?{" "}
+          <a href="/dashboard/login/code" className="underline">
+            Enter your 6-digit code
+          </a>
+          .
+        </p>
       </div>
     </main>
   );
