@@ -20,7 +20,7 @@ export default async function Dashboard() {
     .gte("created_at", new Date(Date.now() - 7 * 24 * 3600 * 1000).toISOString());
 
   const platformCounts = (clickStats ?? []).reduce<Record<string, number>>(
-    (acc, row: any) => {
+    (acc: Record<string, number>, row: { platform: string }) => {
       acc[row.platform] = (acc[row.platform] || 0) + 1;
       return acc;
     },
