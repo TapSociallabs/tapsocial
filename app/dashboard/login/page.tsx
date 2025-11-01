@@ -2,8 +2,10 @@
 import { useState, useMemo } from "react";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default function Login() {
-  const supabase = getSupabaseBrowserClient();
   const [email, setEmail] = useState("");
   const [sending, setSending] = useState(false);
   const [msg, setMsg] = useState<{ type: "ok" | "err"; text: string } | null>(
@@ -32,6 +34,7 @@ export default function Login() {
 
     setSending(true);
     try {
+      const supabase = getSupabaseBrowserClient();
       const redirectTo = `${window.location.origin}/dashboard`;
       const { error } = await supabase.auth.signInWithOtp({
         email,
