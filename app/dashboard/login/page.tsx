@@ -1,8 +1,9 @@
 "use client";
 import { useState, useMemo } from "react";
-import { supabase } from "@/lib/supabase/client";
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 
 export default function Login() {
+  const supabase = getSupabaseBrowserClient();
   const [email, setEmail] = useState("");
   const [sending, setSending] = useState(false);
   const [msg, setMsg] = useState<{ type: "ok" | "err"; text: string } | null>(
@@ -55,7 +56,7 @@ export default function Login() {
     <main className="min-h-screen flex items-center justify-center p-6">
       <div className="w-full max-w-md bg-white dark:bg-dark shadow rounded-2xl p-6">
         <h1 className="text-2xl font-bold mb-2">Sign in to TapSocial</h1>
-        <p className="opacity-70 mb-6">We’ll email you a magic link.</p>
+        <p className="opacity-70 mb-6">We'll email you a magic link.</p>
 
         <input
           className="w-full border rounded-xl px-4 py-3 mb-3"
