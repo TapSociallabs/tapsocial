@@ -32,7 +32,7 @@ export default function LoginClient() {
     setSending(true);
     try {
       const supabase = getSupabaseBrowserClient();
-      const redirectTo = `${window.location.origin}/auth/callback`;
+      const redirectTo = "https://www.tapsocial.me/auth/callback";
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: { emailRedirectTo: redirectTo },
