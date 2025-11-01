@@ -16,22 +16,32 @@
       { "title": "Design smarter", "poster": "/featured/ui-design.jpg", "link": "https://instagram.com/auroracodes" }
     ]
   },
-  "zay": {
-    "full_name": "Zay Nova",
-    "title": "Music Producer",
-    "avatar": "/avatar-demo.png",
-    "stats": { "connections": "58K", "views": "640K" },
-    "socials": {
-      "tiktok": "zaynovabeats",
-      "instagram": "zay.nova",
-      "youtube": "@zaynova",
-      "website": "https://zaynova.io"
+  ""zay": {
+  "name": "Zay Nova",
+  "bio": "Music Producer",
+  "connections": 58000,
+  "views": 640000,
+  "socials": {
+    "tiktok": "zaynovabeats",
+    "instagram": "zay.nova",
+    "youtube": "@zaynova"
+  },
+  "featured": [
+    {
+      "title": "Build AI apps fast",
+      "image": "/featured/ai-fast.png"
     },
-    "featured": [
-      { "title": "808 kit drop", "poster": "/featured/demo-zay-1.jpg", "link": "https://zaynova.io" },
-      { "title": "Cookup session", "poster": "/featured/demo-zay-2.jpg", "link": "https://instagram.com/zay.nova" },
-      { "title": "Preset pack", "poster": "/featured/demo-zay-3.jpg", "link": "https://tiktok.com/@zaynovabeats" }
-    ]
+    {
+      "title": "Prompt hacks",
+      "image": "/featured/prompt-hacks.png"
+    },
+    {
+      "title": "Design smarter",
+      "image": "/featured/design-smarter.png"
+    }
+  ]
+}
+
   },
   "mia": {
     "full_name": "Mia Brooks",
