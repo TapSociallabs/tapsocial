@@ -1,45 +1,25 @@
 'use client';
 
-type Props = {
-  socials: {
-    tiktok?: string;
-    instagram?: string;
-    youtube?: string;
-    website?: string;
-  };
-};
-
-export default function SocialLinks({ socials }: Props) {
-  const items = [
-    socials.tiktok && {
-      label: 'TikTok',
-      href: `https://www.tiktok.com/@${socials.tiktok}`,
-    },
-    socials.instagram && {
-      label: 'Instagram',
-      href: `https://instagram.com/${socials.instagram}`,
-    },
-    socials.youtube && {
-      label: 'YouTube',
-      href: `https://youtube.com/${socials.youtube.startsWith('@') ? socials.youtube : '@'+socials.youtube}`,
-    },
-    socials.website && {
-      label: 'Website',
-      href: socials.website,
-    },
-  ].filter(Boolean) as { label: string; href: string }[];
+export default function SocialLinks({
+  socials,
+  username,
+}: {
+  socials: Record<string, string>;
+  username: string;
+}) {
+  const entries = Object.entries(socials || {});
+  if (!entries.length) return null;
 
   return (
-    <div className="mt-8 flex justify-center gap-3 flex-wrap pb-10">
-      {items.map((i) => (
-        <a
-          key={i.href}
-          href={i.href}
-          target="_blank"
-          className="px-4 py-2 rounded-full text-sm font-semibold bg-white text-black dark:bg-dark dark:text-white border hover:opacity-85"
+    <div className="flex flex-wrap justify-center gap-3 mt-8">
+      {entries.map(([platform]) => (
+        <button
+          key={platform}
+          onClick={() => window.open(`/go/${username}/${platform}`, "_blank")}
+          className="px-5 py-2 border font-medium rounded-full hover:bg-black hover:text-white transition"
         >
-          {i.label}
-        </a>
+          {platform.charAt(0).toUpperCase() + platform.slice(1)}
+        </button>
       ))}
     </div>
   );

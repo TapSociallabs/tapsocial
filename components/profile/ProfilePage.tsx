@@ -53,7 +53,7 @@ export default function ProfilePage({
         </motion.button>
 
         <FeaturedContent items={data.featured} />
-        <SocialLinks socials={data.socials} />
+        <SocialLinks socials={data.socials} username={username} />
       </div>
 
       {showModal && (
